@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title></title>
+
+<style type="text/css">
+		.thumbnail{
+			margin-bottom: 20px;
+		}
+		ul{
+			margin-left: 920px;
+			margin-right: 0px;
+		}
+		.para{
+			margin-top: 20px;
+			
+		}
+
+		form{
+			width: 30%;
+			margin: 0 auto;
+		}
+		h1{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<%include header%>
+
+<div class="container">
+	<h1>Create A New Campground</h1>
+<form action="/update/comment/<%=obj._id%>/<%=i%>?_method=PUT" method="POST"  >
+	<input type="text" class="form-control" name="cmt" value="<%=obj.comment[i].comment%>">
+	<button class="btn btn-danger btn-block">Update!!</button>
+</form>
+</div>
+<p class="d-flex justify-content-center font-weight-bold para border-top">TradeMark YelpCamp 2019</p>
+</body>
+</html>

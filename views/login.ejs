@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title></title>
+
+<style type="text/css">
+	div{
+		text-align: center;
+	}
+	h2{
+		color:#3e5bed;
+	}
+		form{
+			width: 30%;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=1367664476717482&autoLogAppEvents=1"></script>
+
+
+	 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/campgrounds">YelpCamp</a>
+    </nav>
+    <div class="container">
+    	<%if(message.length>0){%>
+    <div class="alert alert-danger" role="alert"><%=message%></div>
+    	
+		<%}%>
+    	 
+    </div>
+    <div >
+    <h2>Login</h2>
+	<form action="/login" method="POST">
+		<input type="text"class="form-control" name="username" placeholder="Username" autocomplete="off">
+		<input type="password" class="form-control" name="password" placeholder="Password">
+		<button class="btn btn-primary btn-block">Login</button>
+		<!-- <input class="fb-login-button" type="button" onclick="logIn()" value="Login with Facebook" name="person"> -->
+		<!-- <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span>Facebook</a> -->
+	</form>
+	</div>
+
+
+	<!-- <script>
+		var person={userID:"0", name:"", firstname:"", accessToken:"", picture:"", email:""};
+		function logIn()
+		{
+
+			FB.login(function(response){
+				if(response.status="connected"){
+					person.userID=response.authResponse.userID;
+					person.accessToken=response.authResponse.accessToken;
+					FB.api('/me?fields=id,name,first_name,email,picture',function(userData)
+					{
+						person.name=userData.name;
+						person.email=userData.email;
+						person.picture=userData.picture.data.url;
+						person.firstname=userData.first_name;
+					})
+
+				}
+				console.log(response);
+			},{scope:'public_profile,email'})
+		}
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '1367664476717482',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v4.0'
+    });
+  };
+</script> -->
+<!-- <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script> -->
+
+
+</body>
+</html>

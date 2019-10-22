@@ -1,0 +1,32 @@
+.all{
+	position: relative;
+}
+img{
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.msg{
+	color: white;
+	position: absolute;
+	z-index: 1;
+	text-align: center;
+	font-size: 35px;
+	color: white;
+	font-weight: 500;
+	margin-top: 100%;
+	width: 400px;
+	
+}
+.msg p{
+	margin-bottom: 0px;
+}
+
+.trademark{
+	margin-bottom: 0px;
+color:white;
+margin-left:0;
+}

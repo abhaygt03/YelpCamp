@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		ul{
+			margin-left: 920px;
+			margin-right: 0px;
+
+		}
+			.thumbnail{
+			margin-bottom: 20px;
+		}
+		form{
+			width: 30%;
+			margin: 0 auto;
+		}
+		h1{
+			text-align: center;
+		}
+		.para{
+			margin-top: 400px;
+		}
+		}
+
+	</style>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<%include header%>
+<div class="container">
+	<h1>Add Comments To <%=obj.name%></h1>
+<form action="/comments/<%=obj._id%>" method="POST"  >
+	<input type="text" class="form-control" name="data" placeholder="Comment" autocomplete="off">
+	<!-- <input type="text" class="form-control" name="author" placeholder="Author"> -->
+	<button class="btn btn-danger btn-block">Post!!</button>
+</form>
+</div>
+
+
+</div>
+<p class="d-flex justify-content-center font-weight-bold para border-top">TradeMark YelpCamp 2019.</p>
+
+</div>
+
+</body>
+</html>

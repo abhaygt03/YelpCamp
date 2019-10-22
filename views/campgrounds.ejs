@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		button{
+			float: right;
+		}
+		.para{
+			margin-top: 20px;
+			
+		}
+		.thumbnail{
+			margin-bottom: 0px;
+		}
+		ul{
+			margin-left: 80%;
+		}
+
+		li{
+			position: inline;
+		}
+		div .col-sm-5{
+			padding: 0;
+			margin-bottom: 80px;
+		}
+		img{
+			width: inherit;
+			width: 475px;
+			height: 250px;
+		}
+		div .thumbnail{
+			padding: 0;
+		}
+
+		nav{
+			background: #5f2c82;
+			background: -webkit-linear-gradient(to left, #49a09d, #5f2c82); 
+			background: linear-gradient(to left, #49a09d, #5f2c82); 
+			}
+		body{
+			background: #ff00cc;
+			background: -webkit-linear-gradient(to bottom, #333399, #ff00cc);
+			background: linear-gradient(to bottom, #333399, #ff00cc);
+			}
+			.apply{
+					background: #ff00cc;
+			background: -webkit-linear-gradient(to bottom, #333399, #ff00cc);
+			background: linear-gradient(to bottom, #333399, #ff00cc);
+			}
+
+	</style>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title></title>
+</head>
+<body>
+
+ <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/campgrounds" style="color: white" >YelpCamp</a>
+  
+ 
+
+    <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+     <%if(!currentuser) {%>
+      <li>
+        <a class="nav-link" href="/login" style="color: white" class="lione">Login</a>
+      </li>
+      <li >
+        <a class="nav-link" href="/register" style="color: white" class="litwo">Sign Up</a>
+      </li><%}
+      else{%>
+      <li class="nav-link" style="color: white"><strong><%=currentuser.username[0].toUpperCase()+currentuser.username.slice(1)%></strong></li>
+      <li>
+        <a class="nav-link" href="/logout" style="color: white">Log Out</a>
+      </li>
+      <%}%>
+      </ul>
+  </div>
+</nav>
+
+<div class="container">
+    	<%if(message.length>0){%>
+    <div class="alert alert-success" role="alert"><%=message%></div>
+    	
+		<%}%>
+	</div>
+<div class="container">
+    	<%if(msg.length>0){%>
+    <div class="alert alert-success" role="alert"><%=msg%></div>
+    	
+		<%}%></div>
+
+
+	<div class="container">
+		<div class="jumbotron" style="margin-top:8px; color: white; background:rgb(84,90,182);
+			padding-bottom: 15px;
+		background-image: url(https://www0.assets.heroku.com/assets/hero/hero-solutions-b4e56d975eb7691d7e4cebf87cc2ba51744535058f0f78adf7a36aae84ceca93.svg);">
+			<div class="container">
+<h1 >Welcome to YelpCamp!!</h1>
+<p>View our handpicked campgrounds from all over the world</p>
+	</div>
+<div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="customSwitch1">
+  <label class="custom-control-label" for="customSwitch1">Dark mode</label>
+</div>
+ <div class="row">
+    <div class="col-md-4 col-lg-12">
+<a class="btn btn-primary float-right" href="/campgrounds/new" style="margin-bottom: 2px;">Got Something New!!</a>
+      
+    </div>
+  </div>
+
+</div>
+
+
+<div class="row justify-content-between">
+<%for(var i=0;i< arr.length;i++){%>
+	<div class="col-sm-5 cl">
+<div class="thumbnail container"> 
+<img src="<%= arr[i].img%>" class="rounded">
+<div class="caption container">
+<h4 style="font-size: 1.5rem; color:#fff; font-weight: 500;"><%= arr[i].name%></h4>
+<p><a style="color:#fff" href="/campgrounds/<%=arr[i]._id %>" class="btn btn-primary">More Info!</a></p>
+</div>
+</div>
+</div>
+
+<%}%>
+
+</div >
+<p style="color:white" class="d-flex justify-content-center font-weight-bold para border-top" >TradeMark YelpCamp 2019.</p>
+
+</div>
+</body>
+<script type="text/javascript" src="/public/script/campgoundark.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>

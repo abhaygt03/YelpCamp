@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title></title>
+	<style type="text/css">
+		.thumbnail{
+			margin-bottom: 20px;
+		}
+		ul{
+			margin-left: 920px;
+			margin-right: 0px;
+		}
+		.para{
+			margin-top: 20px;
+			
+		}
+
+		form{
+			width: 30%;
+			margin: 0 auto;
+		}
+		h1{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<%include header%>
+	<div class="container">
+	<h1>Update The Campground</h1>
+<form action="/update/<%=obj._id%>?_method=PUT" method="POST"  >
+	<input type="text" class="form-control" name="camp[name]" value="<%=obj.name%>">
+	<input type="text" class="form-control" name="camp[img]" value="<%=obj.img%>">
+	<input type="text" class="form-control" name="camp[description]" value="<%=obj.description%>">
+	<button class="btn btn-danger btn-block">Update!!</button>
+</form>
+</div>
+</body>
+</html>
